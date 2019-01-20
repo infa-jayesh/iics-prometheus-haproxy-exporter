@@ -1,0 +1,15 @@
+case "$1" in
+  start)
+    sudo -u root bash -c 'cd /opt/prometheus_haproxy/ && ./start-promethues_haproxy.sh'
+    ;;
+  stop)
+    sudo -u root bash -c 'cd /opt/prometheus_haproxy && ./stop-promethues_haproxy.sh'
+    sleep 2
+    ;;
+  *)
+    echo "Usage: /etc/init.d/promethues_haproxy_exporter {start|stop}"
+    exit 1
+    ;;
+esac
+
+exit 0
